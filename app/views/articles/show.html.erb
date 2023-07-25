@@ -1,0 +1,22 @@
+<br>
+<div class="card" style="width: 60rem;">
+  <div class="card-body">
+    <h1 class="card-title"><%= @article.title %></h1>
+
+    <p class="card-text"><%= @article.body %></p>
+
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item"><%= link_to "Edit", edit_article_path(@article), class: "btn btn-success"%></li>
+      <li class="list-group-item"><%= link_to "Destroy", article_path(@article),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }, class: "btn btn-danger"%></li>
+    </ul>
+    <br>
+    <h4><span class="badge badge-pill badge-warning">Comments</span></h4>
+    <%= render @article.comments %>
+  </div>
+</div>
+<br>
+
+<h4 style="border:2px solid DodgerBlue;width:190px">Add a comment:</h4>
+<%= render 'comments/form' %>

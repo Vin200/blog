@@ -1,0 +1,11 @@
+<h1 style="color:Tomato;text-align: center;"><strong>Articles</strong></h1>
+
+<ul class="list-group">
+  <% @articles.each do |article| %>
+    <li class="list-group-item">
+      <%= link_to article.title, article %>
+    </li>
+  <% end %>
+</ul>
+<br/>
+<%= link_to "New Article", new_article_path, class: "btn btn-success" %>
